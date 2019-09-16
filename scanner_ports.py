@@ -2,7 +2,7 @@
 
 import socket
 import threading
-
+from termcolor import colored
 
 
 socket.setdefaulttimeout(2)
@@ -64,7 +64,7 @@ class Scanner:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
         if not sock.connect_ex((self.host, port)):
-            print("Port %d is open." % (port))
+            print(colored("[+] Port %d is open." % (port), 'green'))
         # else:
         #     print("Port %d is close." % (port))
 
